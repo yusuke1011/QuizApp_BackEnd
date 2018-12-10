@@ -41,8 +41,13 @@ const quizRender = (_req) => {
 //リザルト画面表示
 const resultRender = (_req) => {
     let answerCount = 0;
+    console.log(selectedAnswers);
+    for(i = 0; i<10; i++){
+        quizInstances[i].correctAnswer;
+    }
+    console.log(quizInstances)
     selectedAnswers.forEach((element, index) => {
-        if (element === quizInstances[index]){
+        if (element === quizInstances[index].correctAnswer){
             answerCount++;
         }
     });

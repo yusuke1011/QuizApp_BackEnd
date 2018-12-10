@@ -26,4 +26,4 @@ class Quiz {
     }
 }
 //モジュールとしてexport
-exports.Quiz = Quiz;
+module.exports = Quiz;
