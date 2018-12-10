@@ -11,6 +11,8 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "node-fetch": "^2.3.0"
+    "mocha": "^5.2.0",
+    "node-fetch": "^2.3.0",
+    "power-assert": "^1.6.1"
   }
 }
