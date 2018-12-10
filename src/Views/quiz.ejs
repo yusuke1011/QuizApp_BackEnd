@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+</head>
+<body>
+  <h1>第<%- count %>問</h1>
+  <p>タイプ：<%- type %></p>
+  <p>カテゴリー：<%- category %></p>
+  <p>難易度：<%- difficulty %></p>
+  <hr>
+  <%- question %>
+  <% console.log(count) %>
+  <hr>
+  <% if(count >= 10){ %>
+    <form method="POSt" action="./result">
+      <table>
+          <tr>
+            <td><button id="answer1"><%- answer1 %></button></td>
+          </tr>
+          <tr>
+            <td><button id="answer2"><%- answer2 %></button></td>
+          </tr>
+          <% if(answer3){ %>
+            <tr>
+              <td><button id="answer3"><%- answer3 %></button></td>
+            </tr>
+          <% } %>
+          <% if(answer4){ %>
+            <tr>
+              <td><button id="answer4"><%- answer4 %></button></td>
+            </tr>
+          <% } %>
+      </table>
+    </form>
+  <% }else{ %>
+    <form method="POSt" action="./quiz">
+      <table>
+          <tr>
+            <input type="hidden" value="answer1">
+            <td><button type="submit"><%- answer1 %></button></td>
+          </tr>
+          <tr>
+            <td><button id="answer2"><%- answer2 %></button></td>
+          </tr>
+          <% if(answer3){ %>
+            <tr>
+              <td><button id="answer3"><%- answer3 %></button></td>
+            </tr>
+          <% } %>
+          <% if(answer4){ %>
+            <tr>
+              <td><button id="answer4"><%- answer4 %></button></td>
+            </tr>
+          <% } %>
+      </table>
+    </form>
+  <% } %>
+</body>
+</html>
