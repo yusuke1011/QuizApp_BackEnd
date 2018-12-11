@@ -1,12 +1,20 @@
 const assert = require('power-assert');
-const QuizFetcher = require('../Models/quizfetcher.js');
+const QuizFetcher = require('../Models/Quizfetcher.js');
 
 describe('QuizFetcherのテスト', () => {
   it('QuizFetcherが所望のクイズ問題を返しているかの確認', () => {
-    QuizFetcher.getQuizData()
-      .then((quizDataObj) => {
-        assert.equal(Array.isArray(quizDataObj.results), true);
-        assert.equal(quizDataObj.results.length, 10, true);
+    return QuizFetcher.getQuizData()
+      .then((quizInstances) => {
+        assert.equal(Array.isArray(quizInstances), true);
+        quizInstances.forEach((element) => {
+          assert.equal(!!element.category, true);
+          assert.equal(!!element.type, true);
+          assert.equal(!!element.difficulty, true);
+          assert.equal(!!element.question, true);
+          assert.equal(!!element.correctAnswer, true);
+          assert.equal(Array.isArray(element.incorrectAnswers), true);
+          assert.equal(Array.isArray(element.answers), true);
+        });
       });
   });  
 });
