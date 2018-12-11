@@ -1,6 +1,5 @@
 //予め必要なモジュールを読み込んでおく
-const quizFetcherModel = require('./../Models/quizfetcher');
-const quizModel = require('./../Models/quiz.js');
+const quizFetcherModel = require('../Models/Quizfetcher');
 
 let quizInstances = [];
 let selectedAnswers = [];
