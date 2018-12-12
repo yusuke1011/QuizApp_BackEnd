@@ -20,7 +20,6 @@ class QuizFetcher {
             });
     }
 }
-
 //モジュールとしてexport
 module.exports = QuizFetcher;
 

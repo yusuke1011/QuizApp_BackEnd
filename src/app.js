@@ -1,22 +1,28 @@
-//expressモジュールの読み込み
+//express
 const express = require('express');
-//インスタンス化
 const app = express();
-// ejsモジュールの読み込み
+
+//ejs
 const ejs = require('ejs');
-// テンプレートエンジンの指定
 app.set('view engine', 'ejs');
 
-//コントローラの読み込み
-const controller = require('./Controllers/index.js');
-console.log(controller);
-
+//bodyParser
 var bodyParser = require('body-parser');
-// urlencodedとjsonは別々に初期化する
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
+//Controller
+const controller = require('./Controllers/index.js');
+
+//static
+app.use(express.static('public'));
+
+//クイズインスタンスを返すAPI
+app.get('/api/quiz', (req, res) => {
+    controller.quizRender(res);
+});
 
 //ホーム画面表示
 app.get('/', (req, res) => {
@@ -25,20 +31,7 @@ app.get('/', (req, res) => {
 
 //クイズ画面表示
 app.get('/quiz', (req, res) => {
-    console.log('get', req.body);
-    controller.quizRender(res);
-});
-
-//クイズ画面表示
-app.post('/quiz', (req, res) => {
-    controller.answerCounter(req.body.text);
-    controller.quizRender(res);
-});
-
-//リザルト画面表示
-app.post('/result', (req, res) => {
-    controller.answerCounter(req.body.text);
-    controller.resultRender(res);
+    res.render('quiz.ejs');
 });
 
 //3000番ポートを使用してサーバ起動

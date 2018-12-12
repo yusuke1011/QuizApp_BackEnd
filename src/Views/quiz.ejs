@@ -5,57 +5,27 @@
   <title>Quiz</title>
 </head>
 <body>
-  <h1>第<%- count %>問</h1>
-  <p>タイプ：<%- type %></p>
-  <p>カテゴリー：<%- category %></p>
-  <p>難易度：<%- difficulty %></p>
+  <h1><div id="title"></div></h1>
+  <h3><div id="subTitle"></div></h3>
   <hr>
-  <%- question %>
-  <% console.log(count) %>
+  <div id="questionMessage"></div>
   <hr>
-  <% if(count >= 10){ %>
-    <form method="POSt" action="./result">
-      <table>
-          <tr>
-            <td><button id="answer1"><%- answer1 %></button></td>
-          </tr>
-          <tr>
-            <td><button id="answer2"><%- answer2 %></button></td>
-          </tr>
-          <% if(answer3){ %>
-            <tr>
-              <td><button id="answer3"><%- answer3 %></button></td>
-            </tr>
-          <% } %>
-          <% if(answer4){ %>
-            <tr>
-              <td><button id="answer4"><%- answer4 %></button></td>
-            </tr>
-          <% } %>
-      </table>
-    </form>
-  <% }else{ %>
-    <form method="POSt" action="./quiz">
-      <table>
-          <tr>
-            <input type="hidden" value="answer1">
-            <td><button type="submit"><%- answer1 %></button></td>
-          </tr>
-          <tr>
-            <td><button id="answer2"><%- answer2 %></button></td>
-          </tr>
-          <% if(answer3){ %>
-            <tr>
-              <td><button id="answer3"><%- answer3 %></button></td>
-            </tr>
-          <% } %>
-          <% if(answer4){ %>
-            <tr>
-              <td><button id="answer4"><%- answer4 %></button></td>
-            </tr>
-          <% } %>
-      </table>
-    </form>
-  <% } %>
+  <table>
+      <tr>
+        <td><div id="answer1"></div></td>
+      </tr>
+      <tr>
+        <td><div id="answer2"></div></td>
+      </tr>
+      <tr>
+        <td><div id="answer3"></div></td>
+      </tr>
+      <tr>
+        <td><div id="answer4"></div></td>
+      </tr>
+  </table>
+  <div id="bottom"></div>
+  <script src="function.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
