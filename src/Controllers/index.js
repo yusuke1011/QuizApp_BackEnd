@@ -1,4 +1,4 @@
-const QuizFetcher = require('../Models/Quizfetcher');
+const QuizFetcher = require('../Models/QuizFetcher');
 
 //ホーム画面表示
 const indexRender = (_req) => {
