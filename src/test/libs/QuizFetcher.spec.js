@@ -1,6 +1,6 @@
 const assert = require('power-assert');
-const QuizFetcher = require('../Models/QuizFetcher.js');
-const Quiz = require('../Models/Quiz.js');
+const QuizFetcher = require('../../Models/QuizFetcher.js');
+const Quiz = require('../../Models/Quiz.js');
 
 describe('QuizFetcherのテスト', () => {
   it('QuizFetcherが所望のクイズ問題を返しているかの確認', () => {

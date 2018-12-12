@@ -1,5 +1,5 @@
 const assert = require('power-assert');
-const Quiz = require('../Models/Quiz.js');
+const Quiz = require('../../Models/Quiz.js');
 
 const testObj = {
     category : 'category',
