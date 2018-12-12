@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "mocha"
+    "start": "node ./src/app.js",
+    "test": "mocha ./src/test"
   },
   "author": "yusuke",
   "license": "ISC",
