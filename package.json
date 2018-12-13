@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./src/app.js",
+    "start": "nodemon ./src/app.js",
     "test": "mocha ./src/test"
   },
   "author": "yusuke",
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "mocha": "^5.2.0",
+    "nodemon": "^1.18.8",
     "power-assert": "^1.6.1"
   }
 }
