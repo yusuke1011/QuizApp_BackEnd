@@ -14,6 +14,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+//static
+app.use(express.static('./src/public'));
+
 //route
 const router = require('./router.js');
 app.use('/', router);

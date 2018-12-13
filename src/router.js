@@ -1,26 +1,17 @@
 //express
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 //controller
 const controller = require('./Controllers/index.js');
 
-//static
-router.use(express.static('./src/public'));
-
 //クイズインスタンスを返すAPI
-router.get('/api/quiz', (req, res) => {
-    controller.setQuizData(res);
-});
+router.get('/api/quiz', controller.fetchQuizData);
 
 //ホーム画面表示
-router.get('/', (req, res) => {
-    controller.indexRender(res);
-});
+router.get('/', controller.indexRender);
 
 //クイズ画面表示
-router.get('/quiz', (req, res) => {
-    controller.quizRender(res);
-});
+router.get('/quiz', controller.quizRender);
 
 module.exports = router;
