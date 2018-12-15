@@ -1,24 +1,20 @@
-//express
 const express = require('express');
+const ejs = require('ejs');
+const bodyParser = require('body-parser');
+const router = require('./router.js');
+
 const app = express();
 
-//ejs
-const ejs = require('ejs');
 app.set('views', 'src/views');
 app.set('view engine', 'ejs');
 
-//bodyParser
-var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
 
-//static
 app.use(express.static('./src/public'));
 
-//route
-const router = require('./router.js');
 app.use('/', router);
 
 //3000番ポートを使用してサーバ起動
